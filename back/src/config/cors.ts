@@ -1,10 +1,23 @@
-import cors from "cors"
+import cors from "cors";
+import {FRONTEND_URL} from "./env.js";
 
-const corsOptions = {
-    origin: "http://localhost:3000",
+const allowedOrigin = FRONTEND_URL ?? "http://localhost:3000";
+
+const corsOptions: cors.CorsOptions = {
+    origin: allowedOrigin,
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-CSRF-Token"],
+    exposedHeaders: ["X-CSRF-Token"],
+    maxAge: 600,
 }
 
-const openCors = cors()
+const openCorsOptions: cors.CorsOptions = {
+    origin: "*",
+    methods: ["GET"],
+    maxAge: 600,
+}
 
-export { corsOptions, openCors }
+const openCors = cors(openCorsOptions);
+
+export { corsOptions, openCors };
