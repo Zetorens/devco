@@ -1,11 +1,11 @@
-import { receiveCspReport, listCspReports } from "../../src/controllers/cspReport.controller.js"
-import * as service from "../../src/services/cspReport.service.js"
+import { receiveCspReport, listCspReports } from "@/controllers/cspReport.controller.js"
+import * as service from "@/services/cspReport.service.js"
 import { Request, Response } from "express"
 
-jest.mock("../../src/config/db.js", () => ({ prisma: {} }))
-jest.mock("../../src/repositories/cspReport.repository.js")
-jest.mock("../../src/services/cspReport.service.js")
-jest.mock("../../src/config/logger.js", () => ({
+jest.mock("@/config/db.js", () => ({ prisma: {} }))
+jest.mock("@/repositories/cspReport.repository.js")
+jest.mock("@/services/cspReport.service.js")
+jest.mock("@/config/logger.js", () => ({
     logger: { info: jest.fn(), debug: jest.fn(), warn: jest.fn(), error: jest.fn() },
 }))
 

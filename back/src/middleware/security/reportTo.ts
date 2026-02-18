@@ -1,4 +1,4 @@
-import {BACKEND_URL} from "../../config/env.js";
+import {BACKEND_URL} from "@/config/env.js";
 import { Request, Response, NextFunction } from "express";
 
 const reportToGroup = JSON.stringify({

@@ -1,6 +1,6 @@
 import { HelmetOptions } from "helmet"
 import { IncomingMessage, ServerResponse } from "http"
-import { BACKEND_URL } from "./env.js"
+import { BACKEND_URL } from "@/config/env.js"
 
 const helmetOptions: HelmetOptions = {
     contentSecurityPolicy: {

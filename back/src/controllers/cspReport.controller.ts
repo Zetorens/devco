@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import {logger} from "../config/logger.js";
-import {cleanupOldReports, saveCspReport} from "../services/cspReport.service.js";
+import {logger} from "@/config/logger.js";
+import {cleanupOldReports, saveCspReport} from "@/services/cspReport.service.js";
 
 // POST /api/csp-report
 const receiveCspReport = async (req: Request, res: Response) => {

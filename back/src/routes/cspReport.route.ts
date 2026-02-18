@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { receiveCspReport, listCspReports } from "../controllers/cspReport.controller.js"
-import { asyncHandler } from "../middleware/error.js"
+import { receiveCspReport, listCspReports } from "@/controllers/cspReport.controller.js"
+import { asyncHandler } from "@/middleware/error.js"
 
 const cspReportRouter = Router()
 

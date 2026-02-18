@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from "express"
 
-jest.mock("../../src/config/env.js", () => ({
+jest.mock("@/config/env.js", () => ({
     BACKEND_URL: "http://localhost:5000",
 }))
 
-import { reportToMiddleware } from "../../src/middleware/security/reportTo.js"
+import { reportToMiddleware } from "@/middleware/security/reportTo.js"
 
 describe("reportToMiddleware", () => {
     it("should set Report-To header and call next", () => {

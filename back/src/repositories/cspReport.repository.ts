@@ -1,5 +1,5 @@
-import { prisma } from "../config/db.js"
-import { Prisma } from "../generated/prisma/client.js"
+import { prisma } from "@/config/db.js"
+import { Prisma } from "@/generated/prisma/client.js"
 
 const createCspReport = async (payload: Prisma.InputJsonValue) =>
     prisma.cspReport.create({ data: { payload } })

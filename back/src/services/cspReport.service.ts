@@ -1,12 +1,12 @@
-import {MAX_REPORTS, VALID_CSP_FIELDS} from "../constants/cspReport.constant.js";
-import { Prisma } from "../generated/prisma/client.js";
+import {MAX_REPORTS, VALID_CSP_FIELDS} from "@/constants/cspReport.constant.js";
+import { Prisma } from "@/generated/prisma/client.js";
 import {
     countCspReports,
     deleteCspReportsByIds,
     createCspReport,
     getLatestCspReports
-} from "../repositories/cspReport.repository.js";
-import {logger} from "../config/logger.js";
+} from "@/repositories/cspReport.repository.js";
+import {logger} from "@/config/logger.js";
 
 const cleanupOldReports = async () => {
     const count = await countCspReports()

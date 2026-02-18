@@ -1,11 +1,11 @@
 import request from "supertest"
-import { createApp } from "../../src/app.js"
-import * as repository from "../../src/repositories/cspReport.repository.js"
+import { createApp } from "@/app.js"
+import * as repository from "@/repositories/cspReport.repository.js"
 import type { Express } from "express"
 
-jest.mock("../../src/config/db.js", () => ({ prisma: {} }))
-jest.mock("../../src/repositories/cspReport.repository.js")
-jest.mock("../../src/config/logger.js", () => ({
+jest.mock("@/config/db.js", () => ({ prisma: {} }))
+jest.mock("@/repositories/cspReport.repository.js")
+jest.mock("@/config/logger.js", () => ({
     logger: { info: jest.fn(), debug: jest.fn(), warn: jest.fn(), error: jest.fn() },
 }))
 
