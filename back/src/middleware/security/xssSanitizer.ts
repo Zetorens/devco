@@ -13,10 +13,8 @@ const sanitizeValue = (value: unknown): unknown => {
 }
 
 const xssSanitizer = (req: Request, _res: Response, next: NextFunction) => {
-    if (req.body) req.body = sanitizeValue(req.body)
-    if (req.query) req.query = sanitizeValue(req.query) as typeof req.query
-    if (req.params) req.params = sanitizeValue(req.params) as typeof req.params
-    next()
+    if (req.body) req.body = sanitizeValue(req.body);
+    next();
 }
 
 export { xssSanitizer }
