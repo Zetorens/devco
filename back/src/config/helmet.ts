@@ -16,7 +16,7 @@ const helmetOptions: HelmetOptions = {
             baseUri: ["'self'"],
             formAction: ["'self'"],
             requireTrustedTypesFor: ["'script'"],
-            reportUri: "/api/csp-report",
+            reportUri: "/api/v1/csp-report",
             reportTo: "csp-endpoint",
         },
     },
