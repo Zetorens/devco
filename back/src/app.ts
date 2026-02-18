@@ -1,20 +1,27 @@
-import express from "express"
-import helmet from "helmet"
-import cors from "cors"
-import { corsOptions } from "./config/cors.js"
-import { helmetOptions } from "./config/helmet.js"
+import express from "express";
+import helmet from "helmet";
+import cors from "cors";
+import { corsOptions } from "./config/cors.js";
+import { helmetOptions } from "./config/helmet.js";
 import {initRoutes} from "./config/routes.js";
+import {requestLogger} from "./middleware/requestLogger.js";
+import {errorHandler, notFoundHandler} from "./middleware/error.js";
 
 const createApp = () => {
-    const app = express()
+    const app = express();
 
-    app.use(helmet(helmetOptions))
-    app.use(cors(corsOptions))
+    app.use(helmet(helmetOptions));
+    app.use(cors(corsOptions));
     app.use(express.json());
+
+    app.use(requestLogger);
 
     initRoutes(app);
 
-    return app
+    app.use(notFoundHandler);
+    app.use(errorHandler);
+
+    return app;
 }
 
-export { createApp }
+export { createApp };
